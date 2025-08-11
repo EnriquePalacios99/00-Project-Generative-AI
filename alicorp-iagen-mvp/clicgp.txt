@@ -1,0 +1,16 @@
+# Actualiza la lista de paquetes
+sudo apt-get update
+
+# Instala dependencias necesarias
+sudo apt-get install -y apt-transport-https ca-certificates gnupg
+
+# Agrega el repositorio oficial de Google Cloud
+echo "deb [signed-by=/usr/share/keyrings/cloud.google.gpg] http://packages.cloud.google.com/apt cloud-sdk main" \
+  | sudo tee -a /etc/apt/sources.list.d/google-cloud-sdk.list
+
+# Importa la clave pública de Google
+curl https://packages.cloud.google.com/apt/doc/apt-key.gpg \
+  | sudo tee /usr/share/keyrings/cloud.google.gpg
+
+# Instala la CLI
+sudo apt-get update && sudo apt-get install -y google-cloud-cli
