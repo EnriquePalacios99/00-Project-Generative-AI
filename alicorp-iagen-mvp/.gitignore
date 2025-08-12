@@ -14,3 +14,4 @@ models/*
 
 # Nunca subas credenciales
 credentialess/
+credendiales.json
